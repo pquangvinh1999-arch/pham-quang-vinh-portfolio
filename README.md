@@ -7,12 +7,13 @@ trình kho vận, SAP Scripting, VBA Excel, AI Agent và trực quan hóa dữ l
 
 ## Nội dung chính
 
-- Hero editorial với ảnh chân dung và các chỉ số nổi bật
+- Hero editorial với ảnh chân dung tách nền trên khối cobalt và các chỉ số nổi bật
+- Thanh menu cố định, chỉ báo chuyển mục và tiến trình cuộn trang
 - Năng lực tự động hóa, xử lý dữ liệu, AI Vision và dashboard
-- Kinh nghiệm Warehouse Controller tại ECCO Việt Nam
-- Dự án Inventory FG Dashboard
+- Kinh nghiệm Warehouse Controller tại ECCO Việt Nam và Leggett & Platt
+- Dự án Inventory FG Dashboard, Catalogue AI và ContainerAI
 - Chứng chỉ ISO 9001:2015 Awareness & Internal Auditor
-- Giao diện responsive, animation và hỗ trợ `prefers-reduced-motion`
+- Giao diện responsive, animation theo nhịp cuộn và hỗ trợ `prefers-reduced-motion`
 - Metadata SEO, Open Graph thumbnail, favicon và liên kết liên hệ
 
 ## Chạy dự án

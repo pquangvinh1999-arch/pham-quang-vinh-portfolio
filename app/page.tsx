@@ -1,7 +1,15 @@
 "use client";
 /* eslint-disable @next/next/no-img-element -- Pre-compressed local WebP assets preserve the supplied portrait and certificate exactly. */
 
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const navItems = [
+  { id: "tong-quan", label: "Tổng quan" },
+  { id: "nang-luc", label: "Năng lực" },
+  { id: "kinh-nghiem", label: "Kinh nghiệm" },
+  { id: "du-an", label: "Dự án" },
+  { id: "chung-chi", label: "Chứng chỉ" },
+];
 
 const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
   <svg
@@ -15,6 +23,10 @@ const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
 );
 
 export default function Home() {
+  const navRef = useRef<HTMLElement>(null);
+  const [activeSection, setActiveSection] = useState("tong-quan");
+  const [navIndicator, setNavIndicator] = useState({ left: 0, width: 0 });
+
   useEffect(() => {
     document.documentElement.classList.add("js-enabled");
 
@@ -35,24 +47,91 @@ export default function Home() {
     );
 
     items.forEach((item) => observer.observe(item));
-    return () => observer.disconnect();
+
+    const updateScrollState = () => {
+      const maxScroll =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+      document.documentElement.style.setProperty(
+        "--scroll-progress",
+        String(Math.min(1, Math.max(0, progress))),
+      );
+
+      let currentSection = navItems[0].id;
+      const activationLine = window.innerHeight * 0.35;
+
+      navItems.forEach(({ id }) => {
+        const section = document.getElementById(id);
+        if (section && section.getBoundingClientRect().top <= activationLine) {
+          currentSection = id;
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    updateScrollState();
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", updateScrollState);
+    };
   }, []);
+
+  useEffect(() => {
+    const updateIndicator = () => {
+      const nav = navRef.current;
+      const activeLink = nav?.querySelector<HTMLElement>(
+        `[data-section="${activeSection}"]`,
+      );
+
+      if (!nav || !activeLink) return;
+      setNavIndicator({
+        left: activeLink.offsetLeft,
+        width: activeLink.offsetWidth,
+      });
+    };
+
+    updateIndicator();
+    window.addEventListener("resize", updateIndicator);
+    return () => window.removeEventListener("resize", updateIndicator);
+  }, [activeSection]);
 
   return (
     <main>
+      <div className="page-progress" aria-hidden="true" />
+
       <section className="hero" id="tong-quan" aria-labelledby="hero-title">
         <header className="site-header">
           <a className="wordmark" href="#tong-quan" aria-label="Về đầu trang">
             Phạm Quang Vinh
           </a>
 
-          <nav className="desktop-nav" aria-label="Điều hướng chính">
-            <a className="is-active" href="#tong-quan">
-              Tổng quan
-            </a>
-            <a href="#nang-luc">Năng lực</a>
-            <a href="#kinh-nghiem">Kinh nghiệm</a>
-            <a href="#chung-chi">Chứng chỉ</a>
+          <nav
+            className="desktop-nav"
+            aria-label="Điều hướng chính"
+            ref={navRef}
+          >
+            <span
+              className="nav-glider"
+              aria-hidden="true"
+              style={{
+                width: `${navIndicator.width}px`,
+                transform: `translateX(${navIndicator.left}px)`,
+              }}
+            />
+            {navItems.map(({ id, label }) => (
+              <a
+                data-section={id}
+                className={activeSection === id ? "is-active" : undefined}
+                href={`#${id}`}
+                aria-current={activeSection === id ? "page" : undefined}
+                key={id}
+              >
+                {label}
+              </a>
+            ))}
           </nav>
 
           <a className="header-cta" href="#lien-he">
@@ -68,7 +147,8 @@ export default function Home() {
             </div>
 
             <h1 className="hero-title hero-reveal delay-2" id="hero-title">
-              Phạm Quang Vinh
+              <span>Phạm Quang</span>
+              <span>Vinh</span>
             </h1>
 
             <p className="hero-role hero-reveal delay-3">
@@ -105,10 +185,17 @@ export default function Home() {
               </div>
               <div>
                 <dt>
-                  <strong>100,000</strong>
+                  <strong>150K</strong>
                   <sup>+</sup>
                 </dt>
                 <dd>dòng dữ liệu</dd>
+              </div>
+              <div>
+                <dt>
+                  <strong>10K</strong>
+                  <sup>+</sup>
+                </dt>
+                <dd>SKU được quản lý</dd>
               </div>
             </dl>
 
@@ -123,10 +210,10 @@ export default function Home() {
             <div className="portrait-blue" aria-hidden="true" />
             <div className="portrait-mask">
               <img
-                src="/images/pham-quang-vinh.webp"
+                src="/images/pham-quang-vinh-cutout.png"
                 alt="Phạm Quang Vinh"
-                width="1000"
-                height="1172"
+                width="1024"
+                height="1536"
               />
             </div>
             <div className="portrait-markers" aria-hidden="true">
@@ -141,6 +228,27 @@ export default function Home() {
           Scroll to explore
         </div>
       </section>
+
+      <div className="motion-marquee" aria-hidden="true">
+        <div>
+          <span>DATA OPERATIONS</span>
+          <i>✦</i>
+          <span>WAREHOUSE AUTOMATION</span>
+          <i>✦</i>
+          <span>AI VISION</span>
+          <i>✦</i>
+          <span>PROCESS EXCELLENCE</span>
+          <i>✦</i>
+          <span>DATA OPERATIONS</span>
+          <i>✦</i>
+          <span>WAREHOUSE AUTOMATION</span>
+          <i>✦</i>
+          <span>AI VISION</span>
+          <i>✦</i>
+          <span>PROCESS EXCELLENCE</span>
+          <i>✦</i>
+        </div>
+      </div>
 
       <section className="manifesto section-shell" id="nang-luc">
         <div className="section-kicker reveal" data-reveal>
@@ -187,7 +295,7 @@ export default function Home() {
             <span className="card-index">02 / Data Operations</span>
             <h3>Xử lý dữ liệu quy mô lớn</h3>
             <p>
-              Phân tích, kiểm soát và báo cáo hơn 100.000 dòng dữ liệu với hơn
+              Phân tích, kiểm soát và báo cáo gần 150.000 dòng dữ liệu với hơn
               10.000 SKU.
             </p>
             <ul>
@@ -283,28 +391,66 @@ export default function Home() {
         <div className="timeline">
           <article className="timeline-row reveal" data-reveal>
             <div className="timeline-period">
-              <span>2022</span>
+              <span>2025</span>
               <i />
-              <span>2026</span>
+              <span>Hiện tại</span>
             </div>
             <div className="timeline-place">
-              <span>ECCO (Việt Nam)</span>
+              <span>Leggett &amp; Platt (Bàu Bàng)</span>
               <h3>Warehouse Controller</h3>
-              <p>Nhân viên giám sát kho &amp; xử lý dữ liệu</p>
+              <p>Quản lý vận hành kho &amp; phát triển hệ thống dữ liệu</p>
             </div>
             <ul>
-              <li>Quản lý, theo dõi xuất - nhập nguyên vật liệu và thành phẩm.</li>
               <li>
-                Xây dựng báo cáo kiểm kê ngày, tuần, tháng bằng Excel, SAP và
-                biểu đồ theo từng nhóm vật liệu.
+                Xây dựng hệ thống Bin Location, quy trình SOP và quản lý xuất -
+                nhập - tồn kho nguyên vật liệu, kho thành phẩm.
               </li>
               <li>
-                Kiểm soát hao hụt đầu vào, mức độ an toàn và rủi ro kho vật
-                liệu.
+                Xây dựng quy trình tạo đơn hàng, soạn hàng và xuất hàng từ lệnh
+                sản xuất (Work Order).
               </li>
               <li>
-                Xử lý sai lệch dữ liệu giữa hệ thống và thực tế cùng các phòng
-                ban liên quan.
+                Kiểm soát độ chính xác tồn kho với gần 150.000 dòng dữ liệu.
+              </li>
+              <li>
+                Tự động hóa báo cáo chênh lệch tồn kho và tỷ lệ hao hụt hàng phế
+                theo từng đơn hàng sản xuất.
+              </li>
+              <li>
+                Theo dõi tiến độ xuất hàng, sắp xếp container theo từng target
+                của đơn hàng.
+              </li>
+              <li>
+                Xây dựng thư viện tra cứu linh kiện bằng AI Vision và đồng bộ dữ
+                liệu liên phòng ban, rút ngắn quy trình nhập liệu thủ công.
+              </li>
+            </ul>
+          </article>
+
+          <article className="timeline-row reveal" data-reveal>
+            <div className="timeline-period">
+              <span>2020</span>
+              <i />
+              <span>2025</span>
+            </div>
+            <div className="timeline-place">
+              <span>Công ty TNHH ECCO (Việt Nam)</span>
+              <h3>Warehouse Controller</h3>
+              <p>Kiểm soát kho, dữ liệu và tự động hóa vận hành</p>
+            </div>
+            <ul>
+              <li>Quản lý và đối soát dữ liệu cho hơn 10.000 SKU.</li>
+              <li>
+                Tự động hóa các thao tác nhập liệu thủ công, rút ngắn thời gian
+                xử lý và giảm lỗi vận hành.
+              </li>
+              <li>
+                Xây dựng hệ thống Bin Card, hỗ trợ giảm thiểu chênh lệch tồn
+                kho giữa hệ thống và thực tế.
+              </li>
+              <li>
+                Theo dõi xuất - nhập kho, kiểm kê và phối hợp xử lý sai lệch dữ
+                liệu cùng các phòng ban liên quan.
               </li>
             </ul>
           </article>
@@ -328,24 +474,83 @@ export default function Home() {
           </article>
         </div>
 
-        <a
-          className="project-card reveal"
-          data-reveal
-          href="https://pqvinh99-glory.github.io/Inventory-FG/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div>
-            <span className="card-index">Selected project / 01</span>
-            <h3>Inventory FG Dashboard</h3>
-            <p>
-              Báo cáo phân tích tồn kho tự động được xây dựng bằng TypeScript.
-            </p>
+        <div className="projects-showcase" id="du-an">
+          <div className="projects-heading reveal" data-reveal>
+            <span className="card-index">Selected systems / 03</span>
+            <h3>Các hệ thống đã xây dựng</h3>
           </div>
-          <div className="project-arrow">
-            Xem dự án <Arrow diagonal />
+
+          <div className="project-grid">
+            <a
+              className="project-card project-inventory reveal"
+              data-reveal
+              href="https://pqvinh99-glory.github.io/Inventory-FG/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="project-meta">
+                <span>01</span>
+                <small>Inventory / TypeScript</small>
+              </div>
+              <div>
+                <h4>Inventory FG Dashboard</h4>
+                <p>
+                  Báo cáo phân tích tồn kho thành phẩm tự động, hỗ trợ theo dõi
+                  biến động và sai lệch.
+                </p>
+              </div>
+              <div className="project-arrow">
+                Xem dự án <Arrow diagonal />
+              </div>
+            </a>
+
+            <a
+              className="project-card project-dictionary reveal"
+              data-reveal
+              href="https://dictionary-dnw.pages.dev/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="project-meta">
+                <span>02</span>
+                <small>AI Vision / Catalogue</small>
+              </div>
+              <div>
+                <h4>Catalogue AI</h4>
+                <p>
+                  Thư viện tra cứu linh kiện và mã hàng bằng hình ảnh, kết nối
+                  dữ liệu để rút ngắn thời gian tìm kiếm.
+                </p>
+              </div>
+              <div className="project-arrow">
+                Xem dự án <Arrow diagonal />
+              </div>
+            </a>
+
+            <a
+              className="project-card project-container reveal"
+              data-reveal
+              href="https://containerai.pages.dev/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="project-meta">
+                <span>03</span>
+                <small>Logistics / Planning</small>
+              </div>
+              <div>
+                <h4>ContainerAI</h4>
+                <p>
+                  Theo dõi tiến độ soạn hàng, kế hoạch container và target xuất
+                  hàng theo từng đơn hàng.
+                </p>
+              </div>
+              <div className="project-arrow">
+                Xem dự án <Arrow diagonal />
+              </div>
+            </a>
           </div>
-        </a>
+        </div>
       </section>
 
       <section className="certificate" id="chung-chi">

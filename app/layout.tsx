@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     template: "%s | Phạm Quang Vinh",
   },
   description:
-    "Hồ sơ năng lực của Phạm Quang Vinh - chuyên viên xử lý dữ liệu, tự động hóa quy trình kho vận, SAP Scripting, VBA và trực quan hóa dữ liệu.",
+    "Hồ sơ năng lực của Phạm Quang Vinh - Warehouse Controller chuyên xử lý dữ liệu quy mô lớn, tự động hóa kho vận, AI Vision và trực quan hóa dữ liệu.",
   keywords: [
     "Phạm Quang Vinh",
     "xử lý dữ liệu",
@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     "VBA Excel",
     "warehouse controller",
     "AI Agent",
+    "AI Vision",
+    "Bin Location",
+    "Warehouse Automation",
   ],
   authors: [{ name: "Phạm Quang Vinh" }],
   creator: "Phạm Quang Vinh",
