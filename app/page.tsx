@@ -26,6 +26,12 @@ export default function Home() {
   const navRef = useRef<HTMLElement>(null);
   const [activeSection, setActiveSection] = useState("tong-quan");
   const [navIndicator, setNavIndicator] = useState({ left: 0, width: 0 });
+  const activeSectionIndex = Math.max(
+    0,
+    navItems.findIndex(({ id }) => id === activeSection),
+  );
+  const activeSectionLabel =
+    navItems[activeSectionIndex]?.label ?? navItems[0].label;
 
   useEffect(() => {
     document.documentElement.classList.add("js-enabled");
@@ -101,6 +107,13 @@ export default function Home() {
   return (
     <main>
       <div className="page-progress" aria-hidden="true" />
+      <div className="section-transition" key={activeSection} aria-hidden="true">
+        <div className="section-transition-label">
+          <span>{String(activeSectionIndex + 1).padStart(2, "0")}</span>
+          <i />
+          <strong>{activeSectionLabel}</strong>
+        </div>
+      </div>
 
       <section className="hero" id="tong-quan" aria-labelledby="hero-title">
         <header className="site-header">
@@ -492,6 +505,16 @@ export default function Home() {
                 <span>01</span>
                 <small>Inventory / TypeScript</small>
               </div>
+              <div
+                className="project-thumbnail thumbnail-dashboard"
+                aria-hidden="true"
+              >
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+              </div>
               <div>
                 <h4>Inventory FG Dashboard</h4>
                 <p>
@@ -514,6 +537,13 @@ export default function Home() {
               <div className="project-meta">
                 <span>02</span>
                 <small>AI Vision / Catalogue</small>
+              </div>
+              <div
+                className="project-thumbnail thumbnail-vision"
+                aria-hidden="true"
+              >
+                <span />
+                <i />
               </div>
               <div>
                 <h4>Catalogue AI</h4>
@@ -538,11 +568,20 @@ export default function Home() {
                 <span>03</span>
                 <small>Logistics / Planning</small>
               </div>
+              <div
+                className="project-thumbnail thumbnail-container"
+                aria-hidden="true"
+              >
+                <span />
+                <span />
+                <span />
+              </div>
               <div>
                 <h4>ContainerAI</h4>
                 <p>
-                  Theo dõi tiến độ soạn hàng, kế hoạch container và target xuất
-                  hàng theo từng đơn hàng.
+                  Hệ thống chuyển đổi mô phỏng 3D hàng thành phẩm - nguyên vật
+                  liệu từ dữ liệu thô đến models 3D để trực quan hóa sắp xếp
+                  nhập - xuất container.
                 </p>
               </div>
               <div className="project-arrow">
@@ -642,13 +681,6 @@ export default function Home() {
           <div className="footer-mark">PV</div>
           <p>© 2026 Phạm Quang Vinh. Built around clarity &amp; impact.</p>
           <div className="footer-links">
-            <a
-              href="https://github.com/pquangvinh1999-arch"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
             <a href="#tong-quan">
               Về đầu trang <Arrow />
             </a>
