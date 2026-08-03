@@ -160,17 +160,16 @@ export default function Home() {
             </div>
 
             <h1 className="hero-title hero-reveal delay-2" id="hero-title">
-              <span>Phạm Quang</span>
-              <span>Vinh</span>
+              <span>Phạm Quang Vinh</span>
             </h1>
 
             <p className="hero-role hero-reveal delay-3">
-              Chuyên viên xử lý dữ liệu &amp; tự động hóa
+             Xử lý dữ liệu &amp; tự động hóa với AI Agent
             </p>
 
             <p className="hero-intro hero-reveal delay-4">
-              Biến quy trình kho vận phức tạp thành hệ thống dữ liệu rõ ràng,
-              nhanh và chính xác.
+              Biến quy trình vận hành phức tạp thành hệ thống dữ liệu rõ ràng,
+              tự động và chính xác.
             </p>
 
             <div className="hero-actions hero-reveal delay-5">
@@ -246,19 +245,19 @@ export default function Home() {
         <div>
           <span>DATA OPERATIONS</span>
           <i>✦</i>
-          <span>WAREHOUSE AUTOMATION</span>
+          <span>AI AGENT</span>
           <i>✦</i>
           <span>AI VISION</span>
           <i>✦</i>
-          <span>PROCESS EXCELLENCE</span>
+          <span>VBA EXCEL</span>
           <i>✦</i>
-          <span>DATA OPERATIONS</span>
+          <span>POWERSHELL UI</span>
           <i>✦</i>
-          <span>WAREHOUSE AUTOMATION</span>
+          <span>DASHBOARD REPORT</span>
           <i>✦</i>
-          <span>AI VISION</span>
+          <span>DATA PROCESSING</span>
           <i>✦</i>
-          <span>PROCESS EXCELLENCE</span>
+          <span>SAP AUTOMATION</span>
           <i>✦</i>
         </div>
       </div>
@@ -278,14 +277,14 @@ export default function Home() {
 
           <div className="manifesto-copy reveal" data-reveal>
             <p>
-              Gần 6 năm làm việc cùng dữ liệu và vận hành kho giúp tôi hiểu một
-              hệ thống tốt không chỉ cần đúng - mà còn phải đủ nhanh, trực quan
-              và dễ sử dụng trong thực tế.
+              Gần 6 năm làm việc cùng dữ liệu và vận hành giúp tôi hiểu một
+              hệ thống tốt không chỉ đúng - mà còn phải đủ nhanh, trực quan
+              và dễ sử dụng.
             </p>
             <p>
               Tôi tập trung chuyển đổi quy trình thủ công thành luồng tự động,
               bán tự động; kết nối dữ liệu giữa các bộ phận và biến báo cáo phức
-              tạp thành tín hiệu hành động cho người quản lý.
+              tạp thành quyết định hành động cho cấp quản lý.
             </p>
           </div>
         </div>
@@ -295,8 +294,7 @@ export default function Home() {
             <span className="card-index">01 / Automation</span>
             <h3>Tự động hóa quy trình</h3>
             <p>
-              VBA Excel, SAP Scripting, PowerShell UI và ERP cho các tác vụ nhập
-              liệu, đối chiếu và đồng bộ lặp lại.
+              VBA Excel, SAP Scripting, PowerShell UI, AI AGENT và ERP Scripting cho các tác vụ lặp lại.
             </p>
             <div className="capability-stamp">
               <strong>70%</strong>
@@ -305,10 +303,10 @@ export default function Home() {
           </article>
 
           <article className="capability-card reveal" data-reveal>
-            <span className="card-index">02 / Data Operations</span>
+            <span className="card-index">02 / Data Processing</span>
             <h3>Xử lý dữ liệu quy mô lớn</h3>
             <p>
-              Phân tích, kiểm soát và báo cáo gần 150.000 dòng dữ liệu với hơn
+              Phân tích và làm việc hơn 150.000 dòng dữ liệu với hơn
               10.000 SKU.
             </p>
             <ul>
@@ -322,7 +320,7 @@ export default function Home() {
             <span className="card-index">03 / Intelligence</span>
             <h3>AI Agent &amp; AI Vision</h3>
             <p>
-              Tự động hóa những tác vụ phức tạp và ứng dụng nhận diện hình ảnh
+              Tự động hóa những tác vụ phức tạp và thuật toán nhận diện hình ảnh
               cho linh kiện cơ khí.
             </p>
             <div className="card-orbit" aria-hidden="true">
@@ -353,7 +351,7 @@ export default function Home() {
             <span className="card-index">05 / Systems</span>
             <h3>Xây dựng hệ thống dữ liệu</h3>
             <p>
-              Phát triển công cụ quản lý và trích xuất báo cáo với Java, Python,
+              Phát triển công cụ quản lý và trích xuất báo cáo tự động với ngôn ngữ lập trình Java, Python,
               TypeScript, Vue và React.
             </p>
             <div className="code-line">
@@ -370,7 +368,7 @@ export default function Home() {
       <section className="impact-band" aria-label="Giá trị tạo ra">
         <div className="section-shell impact-grid">
           <p className="impact-eyebrow reveal" data-reveal>
-            Giá trị không nằm ở số lượng báo cáo.
+            Giá trị không nằm ở cách báo cáo.
           </p>
           <blockquote className="reveal" data-reveal>
             Giá trị nằm ở việc giúp đội ngũ nhìn thấy vấn đề{" "}
@@ -393,11 +391,11 @@ export default function Home() {
           <h2 className="section-display reveal" data-reveal>
             Kinh nghiệm được đo bằng
             <br />
-            <em>tác động thực tế.</em>
+            <em>hành động thực tế.</em>
           </h2>
           <p className="reveal" data-reveal>
-            Kết hợp hiểu biết vận hành kho với kỹ năng dữ liệu để xây dựng giải
-            pháp phù hợp với công việc hằng ngày.
+            Kết hợp hiểu biết về dữ liệu với kỹ năng xử lý dữ liệu để xây dựng giải
+            pháp phù hợp với các vấn đề trong công việc.
           </p>
         </div>
 
