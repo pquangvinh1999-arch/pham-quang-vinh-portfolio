@@ -591,52 +591,52 @@ export default function Home() {
       </section>
 
       <section className="certificate" id="chung-chi">
-        <div className="section-shell certificate-grid">
-          <div className="certificate-copy">
-            <div className="section-kicker section-kicker-light reveal" data-reveal>
-              <span>04</span>
-              <p>Chứng chỉ chuyên môn</p>
-            </div>
-
-            <p className="certificate-label reveal" data-reveal>
-              Certificate No. 080925-011
-            </p>
-            <h2 className="reveal" data-reveal>
-              ISO 9001:2015
-              <br />
-              <em>Awareness &amp; Internal Auditor</em>
-            </h2>
-            <p className="certificate-description reveal" data-reveal>
-              Hoàn thành khóa đào tạo nhận thức và đánh giá viên nội bộ vào ngày
-              17/04/2026 tại Leggett &amp; Platt (Bàu Bàng).
-            </p>
-            <a
-              className="certificate-link reveal"
-              data-reveal
-              href="/files/iso-9001-certificate-pham-quang-vinh.pdf"
-              target="_blank"
-            >
-              Xem chứng chỉ gốc <Arrow diagonal />
-            </a>
+        <div className="section-shell">
+          <div className="section-kicker section-kicker-light reveal" data-reveal>
+            <span>04</span>
+            <p>Chứng chỉ chuyên môn</p>
           </div>
 
-          <a
-            className="certificate-frame reveal"
-            data-reveal
-            href="/files/iso-9001-certificate-pham-quang-vinh.pdf"
-            target="_blank"
-            aria-label="Mở chứng chỉ ISO 9001:2015"
-          >
-            <img
-              src="/images/iso-certificate.webp"
-              alt="Chứng chỉ ISO 9001:2015 của Phạm Quang Vinh"
-              width="900"
-              height="1273"
-            />
-            <span>
-              Open document <Arrow diagonal />
-            </span>
-          </a>
+          <div className="certificate-scroller reveal" data-reveal>
+            <div className="certificate-track">
+              <img
+                src="/images/PQV2.webp"
+                alt="Chứng chỉ chuyên môn của Phạm Quang Vinh"
+                width="1036"
+                height="764"
+              />
+              <img
+                src="/images/PQV.webp"
+                alt="Chứng chỉ chuyên môn của Phạm Quang Vinh"
+                width="2390"
+                height="1792"
+              />
+              <img
+                src="/images/PQV1.webp"
+                alt="Chứng chỉ chuyên môn của Phạm Quang Vinh"
+                width="2390"
+                height="1792"
+              />
+              <img
+                src="/images/iso-certificate.webp"
+                alt="Chứng chỉ ISO 9001:2015 của Phạm Quang Vinh"
+                width="900"
+                height="1273"
+              />
+              <img
+                src="/images/PQV3.webp"
+                alt="Chứng chỉ chuyên môn của Phạm Quang Vinh"
+                width="1294"
+                height="906"
+              />
+              <img
+                src="/images/PQV4.webp"
+                alt="Chứng chỉ chuyên môn của Phạm Quang Vinh"
+                width="1290"
+                height="906"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
