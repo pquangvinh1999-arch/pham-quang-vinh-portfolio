@@ -306,7 +306,7 @@ export default function Home() {
             <span className="card-index">02 / Data Processing</span>
             <h3>Xử lý dữ liệu quy mô lớn</h3>
             <p>
-              Phân tích và làm việc hơn 150.000 dòng dữ liệu với hơn
+              Phân tích và làm việc hơn 150.000 Batch dữ liệu với hơn
               10.000 SKU.
             </p>
             <ul>
@@ -424,7 +424,7 @@ export default function Home() {
                 Kiểm soát độ chính xác tồn kho với gần 150.000 Batch.
               </li>
               <li>
-                Tự động hóa báo cáo chênh lệch tồn kho và tỷ lệ hao hụt hàng phế
+                Tự động hóa báo cáo chênh lệch tồn kho và tỷ lệ hao hụt hàng phế, cảnh báo rủi ro lỗi dữ liệu
                 theo từng đơn hàng sản xuất.
               </li>
               <li>
@@ -457,7 +457,7 @@ export default function Home() {
               </li>
               <li>
                 Xây dựng hệ thống Bin Card, High Rack Location, hỗ trợ giảm thiểu chênh lệch tồn
-                kho giữa hệ thống và thực tế. giảm thời gian tìm kiếm hàng hóa
+                kho giữa hệ thống và thực tế. giảm thiểu thời gian tìm kiếm hàng hóa
               </li>
               <li>
                 Theo dõi xuất - nhập kho, kiểm kê và phối hợp xử lý sai lệch dữ
