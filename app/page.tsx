@@ -11,6 +11,17 @@ const navItems = [
   { id: "chung-chi", label: "Chứng chỉ" },
 ];
 
+const marqueeItems = [
+  "DATA OPERATIONS",
+  "DATA PROCESSING",
+  "POWERSHELL UI",
+  "VBA EXCEL",
+  "AI VISION",
+  "DASHBOARD REPORT",
+  "AI AGENT",
+  "SAP AUTOMATION",
+];
+
 const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
   <svg
     aria-hidden="true"
@@ -243,22 +254,12 @@ export default function Home() {
 
       <div className="motion-marquee" aria-hidden="true">
         <div>
-          <span>DATA OPERATIONS</span>
-          <i>✦</i>
-          <span>DATA PROCESSING</span>
-          <i>✦</i>
-          <span>POWERSHELL UI</span>
-          <i>✦</i>
-          <span>VBA EXCEL</span>
-          <i>✦</i>
-          <span>AI VISION</span>
-          <i>✦</i>
-          <span>DASHBOARD REPORT</span>
-          <i>✦</i>
-          <span>AI AGENT</span>
-          <i>✦</i>
-          <span>SAP AUTOMATION</span>
-          <i>✦</i>
+          {[0, 1].map((copy) =>
+            marqueeItems.flatMap((label, i) => [
+              <span key={`${copy}-${i}-text`}>{label}</span>,
+              <i key={`${copy}-${i}-sep`}>✦</i>,
+            ]),
+          )}
         </div>
       </div>
 
@@ -597,45 +598,61 @@ export default function Home() {
             <p>Chứng chỉ chuyên môn</p>
           </div>
 
-          <div className="certificate-scroller reveal" data-reveal>
-            <div className="certificate-track">
+          <div className="certificate-gallery reveal" data-reveal>
+            <figure className="certificate-card">
               <img
                 src="/images/PQV2.webp"
                 alt="Chứng chỉ chuyên môn của Phạm Quang Vinh"
                 width="1036"
                 height="764"
+                loading="lazy"
               />
+            </figure>
+            <figure className="certificate-card">
               <img
                 src="/images/PQV.webp"
                 alt="Chứng chỉ chuyên môn của Phạm Quang Vinh"
                 width="2390"
                 height="1792"
+                loading="lazy"
               />
+            </figure>
+            <figure className="certificate-card">
               <img
                 src="/images/PQV1.webp"
                 alt="Chứng chỉ chuyên môn của Phạm Quang Vinh"
                 width="2390"
                 height="1792"
+                loading="lazy"
               />
+            </figure>
+            <figure className="certificate-card">
               <img
                 src="/images/iso-certificate.webp"
                 alt="Chứng chỉ ISO 9001:2015 của Phạm Quang Vinh"
                 width="900"
                 height="1273"
+                loading="lazy"
               />
+            </figure>
+            <figure className="certificate-card">
               <img
                 src="/images/PQV3.webp"
                 alt="Chứng chỉ chuyên môn của Phạm Quang Vinh"
                 width="1294"
                 height="906"
+                loading="lazy"
               />
+            </figure>
+            <figure className="certificate-card">
               <img
                 src="/images/PQV4.webp"
                 alt="Chứng chỉ chuyên môn của Phạm Quang Vinh"
                 width="1290"
                 height="906"
+                loading="lazy"
               />
-            </div>
+            </figure>
           </div>
         </div>
       </section>
