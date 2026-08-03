@@ -200,7 +200,7 @@ export default function Home() {
                   <strong>150K</strong>
                   <sup>+</sup>
                 </dt>
-                <dd>dòng dữ liệu</dd>
+                <dd>Batch dữ liệu</dd>
               </div>
               <div>
                 <dt>
@@ -245,17 +245,17 @@ export default function Home() {
         <div>
           <span>DATA OPERATIONS</span>
           <i>✦</i>
-          <span>AI AGENT</span>
-          <i>✦</i>
-          <span>AI VISION</span>
-          <i>✦</i>
-          <span>VBA EXCEL</span>
+          <span>DATA PROCESSING</span>
           <i>✦</i>
           <span>POWERSHELL UI</span>
           <i>✦</i>
+          <span>VBA EXCEL</span>
+          <i>✦</i>
+          <span>AI VISION</span>
+          <i>✦</i>
           <span>DASHBOARD REPORT</span>
           <i>✦</i>
-          <span>DATA PROCESSING</span>
+          <span>AI AGENT</span>
           <i>✦</i>
           <span>SAP AUTOMATION</span>
           <i>✦</i>
@@ -409,7 +409,7 @@ export default function Home() {
             <div className="timeline-place">
               <span>Leggett &amp; Platt (Bàu Bàng)</span>
               <h3>Warehouse Controller</h3>
-              <p>Quản lý vận hành kho &amp; phát triển hệ thống dữ liệu</p>
+              <p>Quản lý dữ liệu vận hành kho &amp; phát triển hệ thống báo cáo dữ liệu tự động</p>
             </div>
             <ul>
               <li>
@@ -421,14 +421,14 @@ export default function Home() {
                 sản xuất (Work Order).
               </li>
               <li>
-                Kiểm soát độ chính xác tồn kho với gần 150.000 dòng dữ liệu.
+                Kiểm soát độ chính xác tồn kho với gần 150.000 Batch.
               </li>
               <li>
                 Tự động hóa báo cáo chênh lệch tồn kho và tỷ lệ hao hụt hàng phế
                 theo từng đơn hàng sản xuất.
               </li>
               <li>
-                Theo dõi tiến độ xuất hàng, sắp xếp container theo từng target
+                Theo dõi tiến độ xuất hàng, Phân phối data cho container theo từng target
                 của đơn hàng.
               </li>
               <li>
@@ -447,7 +447,7 @@ export default function Home() {
             <div className="timeline-place">
               <span>Công ty TNHH ECCO (Việt Nam)</span>
               <h3>Warehouse Controller</h3>
-              <p>Kiểm soát kho, dữ liệu và tự động hóa vận hành</p>
+              <p>Kiểm soát dữ liệu kho và tự động hóa quy trình vận hành</p>
             </div>
             <ul>
               <li>Quản lý và đối soát dữ liệu cho hơn 10.000 SKU.</li>
@@ -456,8 +456,8 @@ export default function Home() {
                 xử lý và giảm lỗi vận hành.
               </li>
               <li>
-                Xây dựng hệ thống Bin Card, hỗ trợ giảm thiểu chênh lệch tồn
-                kho giữa hệ thống và thực tế.
+                Xây dựng hệ thống Bin Card, High Rack Location, hỗ trợ giảm thiểu chênh lệch tồn
+                kho giữa hệ thống và thực tế. giảm thời gian tìm kiếm hàng hóa
               </li>
               <li>
                 Theo dõi xuất - nhập kho, kiểm kê và phối hợp xử lý sai lệch dữ
@@ -488,7 +488,7 @@ export default function Home() {
         <div className="projects-showcase" id="du-an">
           <div className="projects-heading reveal" data-reveal>
             <span className="card-index">Selected systems / 03</span>
-            <h3>Các hệ thống đã xây dựng</h3>
+            <h3>Hệ thống đã xây dựng</h3>
           </div>
 
           <div className="project-grid">
@@ -517,7 +517,7 @@ export default function Home() {
                 <h4>Inventory FG Dashboard</h4>
                 <p>
                   Báo cáo phân tích tồn kho thành phẩm tự động, hỗ trợ theo dõi
-                  biến động và sai lệch.
+                  biến động và rủi ro sai lệch.
                 </p>
               </div>
               <div className="project-arrow">
@@ -577,7 +577,7 @@ export default function Home() {
               <div>
                 <h4>ContainerAI</h4>
                 <p>
-                  Hệ thống chuyển đổi mô phỏng 3D hàng thành phẩm - nguyên vật
+                  Hệ thống chuyển đổi mô phỏng 3D hàng hóa - nguyên vật
                   liệu từ dữ liệu thô đến models 3D để trực quan hóa sắp xếp
                   nhập - xuất container.
                 </p>
@@ -652,7 +652,7 @@ export default function Home() {
               Có một quy trình cần làm tốt hơn?
             </p>
             <h2 className="section-display reveal" data-reveal>
-              Hãy cùng biến dữ liệu
+              Hãy cùng biến dữ liệu rối ren
               <br />
               thành <em>lợi thế vận hành.</em>
             </h2>
@@ -670,7 +670,7 @@ export default function Home() {
             </a>
             <div>
               <span>Khu vực</span>
-              <strong>TP. Hồ Chí Minh, Việt Nam</strong>
+              <strong>KCN Bàu Bàng, Phường Long Nguyên, TP. Hồ Chí Minh</strong>
             </div>
           </div>
         </div>
