@@ -352,8 +352,8 @@ export default function Home() {
             <span className="card-index">05 / Systems</span>
             <h3>Xây dựng hệ thống dữ liệu</h3>
             <p>
-              Phát triển công cụ quản lý và trích xuất báo cáo tự động với ngôn ngữ lập trình Java, Python,
-              TypeScript, Vue và React.
+              Phát triển công cụ quản lý và trích xuất báo cáo tự động với ngôn ngữ lập trình Javascript, Python,
+              TypeScript, Vue, SQL, HTML/CSS.
             </p>
             <div className="code-line">
               <span>data</span>
